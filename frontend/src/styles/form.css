@@ -22,6 +22,7 @@
     font-size: 40px;
     text-align: center;
     color: #052c65;
+    margin-bottom: 23px;
 }
 
 
@@ -71,6 +72,7 @@
     margin-left: 50px;
 }
 
+
 .remember {
     display: flex;
     align-items: center;
@@ -103,3 +105,4 @@
     color: #0d6efd;
     margin-left: 8px;
 }
+
