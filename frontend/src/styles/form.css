@@ -1,6 +1,9 @@
 .form {
-    padding-top: 140px;
-    padding-bottom: 123px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+
 }
 
 
@@ -9,6 +12,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
 }
 
 
@@ -28,7 +32,6 @@
 
 .button {
     border-radius: 5px;
-    padding: 12px 16px;
     width: 397px;
     height: 38px;
     background: #0d6efd;
@@ -42,14 +45,16 @@
     color: #fff;
 }
 
+.button:hover {
+    background: #0b54bd;
+}
+
 
 .form-group {
-    display: flex;
-    align-items: center;
     border: 1px solid #ced4da;
     border-radius: 4px;
     background: #fff;
-    padding: 3px 0 3px 0;
+    padding: 7px 0 3px 0;
     width: 397px;
     height: 38px;
     box-sizing: border-box;
@@ -57,9 +62,9 @@
     position: relative;
 }
 
-.input-group {
+.input-group svg {
     position: absolute;
-    top: 0;
+    top: -7px;
     left: -1px;
 }
 
@@ -68,8 +73,9 @@
     outline: 0;
     border: 0;
     font-size: 15px;
-    width: 390px;
-    margin-left: 50px;
+    width: 340px;
+    margin-left: 49px;
+
 }
 
 
@@ -106,3 +112,14 @@
     margin-left: 8px;
 }
 
+.form-error {
+    display: none;
+}
+
+.common-error {
+    color: red;
+    font-size: 12px;
+    display: none;
+    text-align: center;
+    margin-bottom: 5px;
+}

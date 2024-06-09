@@ -1,10 +1,9 @@
 .main {
     display: flex;
-
+    flex-wrap: wrap;
 }
 
 .categories {
-    width: 1220px;
     margin-left: 70px;
 }
 
@@ -114,7 +113,7 @@ h1 {
     margin-top: 40px;
 }
 
-.action-buttons button {
+.action-buttons a {
     font-family: "Roboto Medium", sans-serif;
     padding: 10px 20px;
     border: none;
@@ -122,15 +121,17 @@ h1 {
     cursor: pointer;
     font-size: 14px;
     margin-right: 10px;
+    text-decoration: none;
 }
 
 .create-income {
-    background-color: #28a745;
+    background-color: #198754;
     color: #fff;
 }
 
 .create-income:hover {
-    background-color: #218838;
+    background-color: #1a6b2a;
+    color: #fff;
 }
 
 .create-expense {
@@ -140,6 +141,7 @@ h1 {
 
 .create-expense:hover {
     background-color: #c82333;
+    color: #fff;
 }
 
 .filter-buttons {
