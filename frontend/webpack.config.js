@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const Dotenv = require('dotenv-webpack');
 
 
 module.exports = {
@@ -20,7 +21,7 @@ module.exports = {
         historyApiFallback: true,
     },
     plugins: [
-        // new Dotenv(),
+        new Dotenv(),
         new HtmlWebpackPlugin({
             template: "./index.html"
         }),
@@ -33,6 +34,7 @@ module.exports = {
                 {from: "./bootstrap-5.2.3-examples/assets/dist/js/bootstrap.bundle.min.js", to: "js"},
                 {from: "./bootstrap-5.2.3-examples/sidebars/sidebars.js", to: "js"},
                 {from: "./src/utils/chart.js", to: "js"},
+                {from: "./.env", to: "./"}
             ],
         }),
     ],

@@ -6,7 +6,7 @@ export class Logout {
 
         this.openNewRoute = openNewRoute;
 
-        //Если у пользователя нет accessToken, т.е он не зареган, то переводим его на главную стр. логина
+        //Если у пользователя нет accessToken, т.е он не зареган, то переводим его на стр. логина
         if (!AuthUtils.getAuthInfo(AuthUtils.accessTokenKey) || !AuthUtils.getAuthInfo(AuthUtils.refreshTokenKey)) {
             return this.openNewRoute('/login');
         }
