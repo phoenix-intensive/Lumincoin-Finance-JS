@@ -1,13 +1,14 @@
+<div class="burger-icon" id="burger-icon">&#9776;</div>
 <main class="d-flex overflow-y: hidden">
-    <div class="d-flex flex-column flex-shrink-0 p-3 bg-white sidebar"
-         style="width: 219px; height: 100vh; border-right: 1px solid #D9D9D9">
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-white sidebar" id="sidebar"
+         style="width: 219px; min-height: 100vh; border-right: 1px solid #D9D9D9">
         <a href="/" class="text-center mt-5 mb-2 text-decoration-none">
             <img src="./../static/images/logo.png" alt="logo">
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mt-5 mb-auto">
             <li class="nav-item">
-                <a href="/" id="dashboard" class="d-flex flex-shrink-0 align-items-center nav-link "
+                <a href="/" id="dashboard" class="d-flex flex-shrink-0 align-items-center nav-link"
                    style="width: 184px" ;
                    aria-current="page">
                     <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,7 +26,7 @@
                 </a>
             </li>
             <li>
-                <a href="/income-expenses" class="d-flex flex-shrink-0 align-items-center nav-link"
+                <a href="/incomes-expenses" class="d-flex flex-shrink-0 align-items-center nav-link"
                    style="width: 184px">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -54,27 +55,27 @@
                     </div>
                     <ul class="dropdown-menu-category" id="dropdown-menu" style="width: 186px">
                         <li><a href="/income" class="dropdown-item">Доходы</a></li>
-                        <li><a href="/expenses" class="dropdown-item">Расходы</a></li>
+                        <li><a href="/expense" class="dropdown-item">Расходы</a></li>
                     </ul>
                 </div>
             </li>
         </ul>
-        <div class="balance">
-            Баланс: <span class="fw-bold">$500</span>
+        <div class="balance" id="balance">
+            Баланс: <span class="fw-bold"></span>
         </div>
         <hr>
         <div class="dropdown">
             <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle"
                data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
-                <strong>User</strong>
+                <img src="../static/images/avatar.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                <div id="profile-name"></div>
             </a>
             <ul class="dropdown-menu text-small shadow" style="">
                 <li><a class="dropdown-item" href="/logout">Sign out</a></li>
             </ul>
         </div>
     </div>
-    <div id="content-layout"></div>
+    <div id="content-layout" style="flex: 1"></div>
 </main>
 
 

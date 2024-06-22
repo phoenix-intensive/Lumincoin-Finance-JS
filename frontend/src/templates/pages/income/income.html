@@ -1,28 +1,14 @@
-<section class="main">
-    <div class="categories">
-        <h1>Доходы</h1>
-        <div class="categories-blocks">
-            <div class="categories-block">
-                <h3>Депозиты</h3>
-                <a href="/income-edit" class="btn-edit">Редактировать</a>
-                <button class="btn-delete">Удалить</button>
+<div class="categories">
+    <h1>Доходы</h1>
+        <div class="categories-blocks" id="incomes"></div>
+    <div class="popup-container" id="popup">
+        <div class="popup">
+            Вы действительно хотите удалить категорию? Связанные доходы будут удалены навсегда.
+            <div class="button-popup">
+                <a href="/income" class="btn-create-popup" id="confirmDeleteButton">Да, удалить</a>
+                <a href="/income" class="btn-delete-popup" id="cancelDeleteButton">Не удалять</a>
             </div>
-            <div class="categories-block">
-                <h3>Зарплата</h3>
-                <a href="/income-edit" class="btn-edit">Редактировать</a>
-                <button class="btn-delete">Удалить</button>
-            </div>
-            <div class="categories-block">
-                <h3>Сбережения</h3>
-                <a href="/income-edit" class="btn-edit">Редактировать</a>
-                <button class="btn-delete">Удалить</button>
-            </div>
-            <div class="categories-block">
-                <h3>Инвестиции</h3>
-                <a href="/income-edit" class="btn-edit">Редактировать</a>
-                <button class="btn-delete">Удалить</button>
-            </div>
-            <a href="/income-create"> <div class="categories-block add-new"><span>+</span></div></a>
         </div>
     </div>
-</section>
+</div>
+

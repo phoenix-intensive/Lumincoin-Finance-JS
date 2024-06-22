@@ -3,6 +3,22 @@ import {Login} from "./components/auth/login.js";
 import {SignUp} from "./components/auth/sign-up.js";
 import {FileUtils} from "./utils/file-utils.js";
 import {Logout} from "./components/auth/logout.js";
+import {IncomeList} from "./components/income/income-list.js";
+import {IncomeDelete} from "./components/income/income-delete.js";
+import {IncomeEdit} from "./components/income/income-edit.js";
+import {IncomeCreate} from "./components/income/income-create.js";
+import {ExpenseList} from "./components/expense/expense-list.js";
+import {ExpenseDelete} from "./components/expense/expense-delete.js";
+import {ExpenseEdit} from "./components/expense/expense-edit.js";
+import {ExpenseCreate} from "./components/expense/expense-create.js";
+import {IncomesExpensesList} from "./components/incomes-expenses/incomes-expenses-list.js";
+import {IncomesExpensesDelete} from "./components/incomes-expenses/incomes-expenses-delete.js";
+import {IncomesExpensesCreate} from "./components/incomes-expenses/incomes-expenses-create.js";
+import {IncomesExpensesEdit} from "./components/incomes-expenses/incomes-expenses-edit.js";
+import {AuthUtils} from "./utils/auth-utils.js";
+import {Balance} from "./components/balance/balance.js";
+import {HandleLClickSidebar} from "./utils/handle-click-sidebar.js";
+
 
 export class Router {
     constructor() {
@@ -11,9 +27,7 @@ export class Router {
         this.titleElement = document.getElementById('title');
         this.contentElement = document.getElementById('content');
 
-
         this.initEvents();
-
 
         this.routes = [
             {
@@ -23,6 +37,8 @@ export class Router {
                 useLayout: '/templates/layout.html',
                 load: () => {
                     new Dashboard(this.openNewRoute.bind(this));
+                    new Balance(this.openNewRoute.bind(this));
+                    new HandleLClickSidebar();
                 },
                 styles: ['layout.css', 'income-expenses.css'],
                 scripts: ['chart.js', 'sidebars.js'],
@@ -52,30 +68,45 @@ export class Router {
                 },
             },
             {
-                route: '/expenses',
+                route: '/expense',
                 title: 'Расходы',
-                filePathTemplate: '/templates/pages/expenses/expenses.html',
+                filePathTemplate: '/templates/pages/expense/expense.html',
                 styles: ['layout.css', 'income-expenses.css'],
                 useLayout: '/templates/layout.html',
                 load: () => {
+                    new ExpenseList(this.openNewRoute.bind(this));
+                    new Balance(this.openNewRoute.bind(this));
+                    new HandleLClickSidebar();
                 },
             },
             {
-                route: '/expenses-create',
+                route: '/expense-create',
                 title: 'Создание расхода',
-                filePathTemplate: '/templates/pages/expenses/expenses-create.html',
+                filePathTemplate: '/templates/pages/expense/expense-create.html',
                 styles: ['layout.css', 'income-expenses.css'],
                 useLayout: '/templates/layout.html',
                 load: () => {
+                    new ExpenseCreate(this.openNewRoute.bind(this));
+                    new Balance(this.openNewRoute.bind(this));
+                    new HandleLClickSidebar();
                 },
             },
             {
-                route: '/expenses-edit',
+                route: '/expense-edit',
                 title: 'Редактирование расхода',
-                filePathTemplate: '/templates/pages/expenses/expenses-edit.html',
+                filePathTemplate: '/templates/pages/expense/expense-edit.html',
                 styles: ['layout.css', 'income-expenses.css'],
                 useLayout: '/templates/layout.html',
                 load: () => {
+                    new ExpenseEdit(this.openNewRoute.bind(this));
+                    new Balance(this.openNewRoute.bind(this));
+                    new HandleLClickSidebar();
+                },
+            },
+            {
+                route: '/expense-delete',
+                load: () => {
+                    new ExpenseDelete(this.openNewRoute.bind(this));
                 },
             },
             {
@@ -85,6 +116,9 @@ export class Router {
                 styles: ['layout.css', 'income-expenses.css'],
                 useLayout: '/templates/layout.html',
                 load: () => {
+                    new IncomeList(this.openNewRoute.bind(this));
+                    new Balance(this.openNewRoute.bind(this));
+                    new HandleLClickSidebar();
                 },
             },
             {
@@ -94,6 +128,9 @@ export class Router {
                 styles: ['layout.css', 'income-expenses.css'],
                 useLayout: '/templates/layout.html',
                 load: () => {
+                    new IncomeCreate(this.openNewRoute.bind(this));
+                    new Balance(this.openNewRoute.bind(this));
+                    new HandleLClickSidebar();
                 },
             },
             {
@@ -103,33 +140,57 @@ export class Router {
                 styles: ['layout.css', 'income-expenses.css'],
                 useLayout: '/templates/layout.html',
                 load: () => {
+                    new IncomeEdit(this.openNewRoute.bind(this));
+                    new Balance(this.openNewRoute.bind(this));
+                    new HandleLClickSidebar();
                 },
             },
             {
-                route: '/income-expenses',
+                route: '/income-delete',
+                load: () => {
+                    new IncomeDelete(this.openNewRoute.bind(this));
+                },
+            },
+            {
+                route: '/incomes-expenses',
                 title: 'Доходы и расходы',
-                filePathTemplate: '/templates/pages/income-expenses/income-expenses.html',
+                filePathTemplate: '/templates/pages/incomes-expenses/incomes-expenses.html',
                 styles: ['layout.css', 'income-expenses.css'],
                 useLayout: '/templates/layout.html',
                 load: () => {
+                    new IncomesExpensesList(this.openNewRoute.bind(this));
+                    new Balance(this.openNewRoute.bind(this));
+                    new HandleLClickSidebar();
                 },
             },
             {
-                route: '/income-expenses-create',
+                route: '/incomes-expenses-create',
                 title: 'Создание доходов/расходов',
-                filePathTemplate: '/templates/pages/income-expenses/income-expenses-create.html',
+                filePathTemplate: '/templates/pages/incomes-expenses/incomes-expenses-create.html',
                 styles: ['layout.css', 'income-expenses.css'],
                 useLayout: '/templates/layout.html',
                 load: () => {
+                    new IncomesExpensesCreate(this.openNewRoute.bind(this));
+                    new Balance(this.openNewRoute.bind(this));
+                    new HandleLClickSidebar();
                 },
             },
             {
-                route: '/income-expenses-edit',
+                route: '/incomes-expenses-edit',
                 title: 'Редактирование доходов/расходов',
-                filePathTemplate: '/templates/pages/income-expenses/income-expenses-edit.html',
+                filePathTemplate: '/templates/pages/incomes-expenses/incomes-expenses-edit.html',
                 styles: ['layout.css', 'income-expenses.css'],
                 useLayout: '/templates/layout.html',
                 load: () => {
+                    new IncomesExpensesEdit(this.openNewRoute.bind(this));
+                    new Balance(this.openNewRoute.bind(this));
+                    new HandleLClickSidebar();
+                },
+            },
+            {
+                route: '/incomes-expenses-delete',
+                load: () => {
+                    new IncomesExpensesDelete(this.openNewRoute.bind(this));
                 },
             },
         ]
@@ -251,7 +312,10 @@ export class Router {
                         FileUtils.loadPageScript('/js/' + script);
                     }
                 }
+                //Подгружаем имя и фамилию админа в сайдбар
+                this.updateUserName();
             }
+
 
             if (newRoute.load && typeof newRoute.load === "function") {
                 newRoute.load();
@@ -260,6 +324,23 @@ export class Router {
         } else {
             //Если открылась не найденная страница, то отправим польз на главную страницу
             history.pushState({}, '', '/');
+        }
+    }
+
+
+    //Подгружаем имя и фамилию админа в сайдбар
+    updateUserName() {
+        this.profileNameElement = document.getElementById('profile-name');
+        if (this.profileNameElement) {
+            this.userName = null; // Очищаем старое имя
+            let userInfo = AuthUtils.getAuthInfo(AuthUtils.userInfoTokenKey);
+            if (userInfo) {
+                userInfo = JSON.parse(userInfo);
+                if (userInfo && userInfo.name) {
+                    this.userName = userInfo.name;
+                }
+            }
+            this.profileNameElement.innerText = this.userName || ''; // Обновляем имя в элементе
         }
     }
 
@@ -293,7 +374,7 @@ export class Router {
         document.querySelectorAll('.dropdown-item').forEach(item => {
             const href = item.getAttribute('href');
 
-            if ((route.route === '/expenses' && (href === '/expenses')) || (route.route === '/income' && (href === '/income'))) {
+            if ((route.route === '/expense' && (href === '/expense')) || (route.route === '/income' && (href === '/income'))) {
                 item.classList.add('active');
                 dropdownMenuElement.style.display = 'block';
                 buttonCategoryElement.classList.toggle('active');

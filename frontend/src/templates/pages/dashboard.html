@@ -2,15 +2,15 @@
         <div class="categories">
             <h1>Главная</h1>
             <div class="filter-buttons">
-                <button class="btn-filter active">Сегодня</button>
-                <button class="btn-filter">Неделя</button>
-                <button class="btn-filter">Месяц</button>
-                <button class="btn-filter">Год</button>
-                <button class="btn-filter">Все</button>
-                <button class="btn-filter">Интервал</button>
-                <span>с <input type="date"> по <input type="date"></span>
+                <button class="btn-filter active" id="filter-today">Сегодня</button>
+                <button class="btn-filter" id="filter-week">Неделя</button>
+                <button class="btn-filter" id="filter-month">Месяц</button>
+                <button class="btn-filter" id="filter-year">Год</button>
+                <button class="btn-filter" id="filter-all">Все</button>
+                <button class="btn-filter" id="filter-interval">Интервал</button>
+                <span>с <input type="date" id="dateFrom"> по <input type="date" id="dateTo"></span>
             </div>
-
+            <div id="interval-error" class="form-error-interval">Выберите обе даты для фильтрации по интервалу!</div>
 
             <div class="chart">
                 <div class="chart-income">

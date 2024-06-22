@@ -1,6 +1,9 @@
 body {
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: "Roboto Regular", sans-serif;
+
 
 }
 
@@ -37,6 +40,35 @@ a {
     box-sizing: border-box;
 }
 
+a.btn-create-popup {
+    font-family: "Roboto Medium", sans-serif;
+    font-size: 14px;
+    background-color: #198754;
+    color: #fff;
+    border: none;
+    padding: 7px 10px;
+    width: 107px;
+    height: 38px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-sizing: border-box;
+    margin-right: 10px;
+}
+
+a.btn-delete-popup {
+    font-family: "Roboto Medium", sans-serif;
+    background-color: #dc3545;
+    padding: 7px 10px;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 107px;
+    height: 38px;
+}
+
 
 a.btn-edit {
     font-family: "Roboto Medium", sans-serif;
@@ -49,7 +81,7 @@ a.btn-edit {
     font-size: 14px;
     box-sizing: border-box;
     text-decoration: none;
-    padding: 12px 16px;
+    padding: 10px 17px;
 }
 
 
@@ -78,8 +110,6 @@ a.btn-delete {
     box-sizing: border-box;
     text-decoration: none;
     padding: 10px 17px;
-
-
 }
 
 .btn-table {
@@ -97,3 +127,16 @@ a.btn-delete {
     font-size: 12px;
     margin-bottom: 6px;
 }
+
+.burger-icon {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%); /* Hide sidebar initially */
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+
+

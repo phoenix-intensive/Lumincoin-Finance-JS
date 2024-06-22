@@ -18,5 +18,4 @@ export class FileUtils {
         //Добавляем нужную строку стилей в head перед  <link rel="stylesheet" href="/css/adminlte.min.css" id="adminlte_style">
         document.head.insertBefore(link, insertBeforeElement);
     }
-
 }

@@ -25,7 +25,6 @@ export class Login {
     validateForm() {
         let isValid = true;
 
-
         if (this.emailElement.value && this.emailElement.value.match(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/)) {
             this.emailErrorElement.style.display = 'none';
         } else {
