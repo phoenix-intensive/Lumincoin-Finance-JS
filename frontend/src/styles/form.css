@@ -1,0 +1,121 @@
+.form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+
+.form .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.form-image {
+    margin-bottom: 20px;
+}
+
+.form-title {
+    font-family: "Roboto Medium", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    text-align: center;
+    color: #052c65;
+    margin-bottom: 23px;
+}
+
+
+.button {
+    border-radius: 5px;
+    width: 397px;
+    height: 38px;
+    background: #0d6efd;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "Roboto Medium", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+    color: #fff;
+}
+
+.button:hover {
+    background: #0b54bd;
+}
+
+
+.form-group {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background: #fff;
+    padding: 7px 0 3px 0;
+    width: 397px;
+    height: 38px;
+    box-sizing: border-box;
+    margin-bottom: 9px;
+    position: relative;
+}
+
+.input-group svg {
+    position: absolute;
+    top: -7px;
+    left: -1px;
+}
+
+
+.form-input {
+    outline: 0;
+    border: 0;
+    font-size: 15px;
+    width: 340px;
+    margin-left: 49px;
+}
+
+
+.remember {
+    display: flex;
+    align-items: center;
+    margin-top: 13px;
+    margin-bottom: 24px;
+}
+
+
+.remember-label {
+    font-weight: 400;
+    font-size: 12px;
+    color: #000;
+    margin-left: 5px;
+}
+
+
+.form-link {
+    margin-top: 12px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #000;
+}
+
+.form-link a {
+    font-weight: 400;
+    font-size: 12px;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #0d6efd;
+    margin-left: 8px;
+}
+
+.form-error {
+    display: none;
+}
+
+.common-error {
+    color: red;
+    font-size: 12px;
+    display: none;
+    text-align: center;
+    margin-bottom: 5px;
+}
